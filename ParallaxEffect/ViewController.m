@@ -30,7 +30,7 @@
     CGFloat yOffset  = scrollView.contentOffset.y;
     NSLog(@"yOffset:%f",yOffset);
     CGRect f = self.imageView.frame;
-    if (yOffset < -250) {
+    if (yOffset < -CGRectGetHeight(f)) {
         f.origin.y = yOffset;
         f.size.height =  -yOffset;
         self.imageView.frame = f;
