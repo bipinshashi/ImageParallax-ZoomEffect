@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 
-static CGFloat kParallaxRatio = 0.50;
+static CGFloat kParallaxRatio = 0.40;
+static CGFloat kMainImageHeight = 270.0;
 
 @interface ViewController ()
 
@@ -32,8 +33,10 @@ static CGFloat kParallaxRatio = 0.50;
     CGFloat yOffset  = scrollView.contentOffset.y;
     NSLog(@"yOffset:%f",yOffset);
     CGRect f = self.imageView.frame;
-    if (yOffset > -20) //20 = height of status bar
+    if (yOffset >= 0)
         f.origin.y = -(yOffset*kParallaxRatio);
+    else
+        f.size.height = kMainImageHeight - yOffset;
     self.imageView.frame = f;
     NSLog(@"height:%f   y:%f", self.imageView.frame.size.height, self.imageView.frame.origin.y);
 }
