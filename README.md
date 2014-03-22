@@ -2,4 +2,4 @@ ImageParallaxEffect
 ===================
 
 
-<div><img src="Parallax.gif" /></div>
+<div><img src="ParallaxEffect.gif" /></div>
